@@ -32,6 +32,8 @@ class MyApp extends StatelessWidget {
           // background.
           restorationScopeId: 'app',
 
+          locale: settingsController.locale,
+
           // Provide the generated AppLocalizations to the MaterialApp. This
           // allows descendant Widgets to display the correct translations
           // depending on the user's locale.
@@ -41,9 +43,18 @@ class MyApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
+
           supportedLocales: const [
             Locale('en', ''), // English, no country code
+            Locale('zh', '')
           ],
+          
+          localeResolutionCallback: (
+              Locale? locale,
+              Iterable<Locale> supportedLocales,
+              ) {
+            return locale;
+          },
 
           // Use AppLocalizations to configure the correct application title
           // depending on the user's locale.

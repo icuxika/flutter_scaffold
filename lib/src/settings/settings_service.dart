@@ -14,4 +14,12 @@ class SettingsService {
     // Use the shared_preferences package to persist settings locally or the
     // http package to persist settings over the network.
   }
+
+  /// Loads the User's preferred Locale from local or remote storage.
+  Future<Locale> locale() async => const Locale('zh');
+
+  Future<void> updateLocale(Locale locale) async {
+    // Use the shared_preferences package to persist settings locally or the
+    // http package to persist settings over the network.
+  }
 }

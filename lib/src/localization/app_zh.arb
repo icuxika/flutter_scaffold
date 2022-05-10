@@ -1,0 +1,10 @@
+{
+  "appTitle": "Flutter 脚手架",
+  "@appTitle": {
+    "description": "应用程序标题"
+  },
+  "appSettings": "系统设置",
+  "systemTheme": "系统主题",
+  "lightTheme": "明亮主题",
+  "darkTheme": "暗黑主题"
+}
