@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 /// A service that stores and retrieves user settings.
 ///
@@ -16,10 +19,22 @@ class SettingsService {
   }
 
   /// Loads the User's preferred Locale from local or remote storage.
-  Future<Locale> locale() async => const Locale('zh');
+  Future<Locale> locale() async {
+    var systemLocale = await findSystemLocale();
+    return Future.value(Locale(systemLocale));
+  }
 
   Future<void> updateLocale(Locale locale) async {
     // Use the shared_preferences package to persist settings locally or the
     // http package to persist settings over the network.
+  }
+
+  Future<String> findSystemLocale() {
+    try {
+      Intl.systemLocale = Intl.canonicalizedLocale(Platform.localeName);
+    } catch (e) {
+      return Future.value("zh");
+    }
+    return Future.value(Intl.shortLocale(Intl.systemLocale));
   }
 }

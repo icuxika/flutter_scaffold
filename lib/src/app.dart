@@ -48,11 +48,11 @@ class MyApp extends StatelessWidget {
             Locale('en', ''), // English, no country code
             Locale('zh', '')
           ],
-          
+
           localeResolutionCallback: (
-              Locale? locale,
-              Iterable<Locale> supportedLocales,
-              ) {
+            Locale? locale,
+            Iterable<Locale> supportedLocales,
+          ) {
             return locale;
           },
 
