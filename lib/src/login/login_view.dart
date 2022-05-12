@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_scaffold/src/common/constant.dart';
 import 'package:flutter_scaffold/src/util/storage.dart';
 
 import '../sample_feature/sample_item_list_view.dart';
@@ -35,7 +36,8 @@ class LoginView extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   final storageUtil = StorageUtil();
-                  storageUtil.setString("token", "user_123456");
+                  storageUtil.setString(
+                      Constant.storageRequestHeaderToken, "user_123456");
 
                   Navigator.pushNamedAndRemoveUntil(
                       context, SampleItemListView.routeName, (route) => false);

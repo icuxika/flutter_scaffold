@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_scaffold/src/common/constant.dart';
 import 'package:flutter_scaffold/src/util/storage.dart';
 
 import '../settings/settings_view.dart';
@@ -64,7 +65,7 @@ class SampleItemListView extends StatelessWidget {
                   SampleItemDetailsView.routeName,
                 );
                 final storageUtil = StorageUtil();
-                print(storageUtil.getString("token"));
+                storageUtil.remove(Constant.storageRequestHeaderToken);
               });
         },
       ),
