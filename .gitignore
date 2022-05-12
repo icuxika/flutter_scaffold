@@ -45,3 +45,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Platform Use the <flutter create --org org --project-name name .> command to regenerate the relevant directories of each platform
+android/
+ios/
+web/
+linux/
+macos/
+windows/

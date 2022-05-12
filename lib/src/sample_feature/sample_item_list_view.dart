@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_scaffold/src/util/storage.dart';
 
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
@@ -62,6 +63,8 @@ class SampleItemListView extends StatelessWidget {
                   context,
                   SampleItemDetailsView.routeName,
                 );
+                final storageUtil = StorageUtil();
+                print(storageUtil.getString("token"));
               });
         },
       ),
