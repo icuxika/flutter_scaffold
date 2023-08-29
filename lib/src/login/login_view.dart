@@ -42,9 +42,6 @@ class LoginView extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                       context, SampleItemListView.routeName, (route) => false);
                 },
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.yellow,
-                ),
                 child: const Text('ENTER'),
               )
             ],
