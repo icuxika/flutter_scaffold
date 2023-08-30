@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
   intl: 0.18.1
   shared_preferences: ^2.0.14
+  tray_manager: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -32,3 +33,4 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - assets/icons/

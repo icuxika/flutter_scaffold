@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_scaffold/src/tray/tray_init.dart';
+import 'package:flutter_scaffold/src/tray/tray_wrapper.dart';
 import 'package:flutter_scaffold/src/util/storage.dart';
 
 import 'src/app.dart';
@@ -22,5 +26,10 @@ void main() async {
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+  if (Platform.isWindows) {
+    runApp(TrayWrapper(child: MyApp(settingsController: settingsController)));
+    await initSystemTray();
+  } else {
+    runApp(MyApp(settingsController: settingsController));
+  }
 }
